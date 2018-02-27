@@ -4,12 +4,12 @@ import Event from '../mod/event'
 import WaterFall from '../mod/waterfall'
 
 
-NoteManager.load();
+NoteManager.load()
 
 $('.add-note').on('click', function() {
-  NoteManager.add();
+  NoteManager.add()
 })
 
 Event.on('waterfall', function(){
-  WaterFall.init($('#content'));
+  WaterFall.init($('#content'))
 })

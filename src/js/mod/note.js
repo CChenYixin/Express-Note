@@ -1,6 +1,7 @@
-import 'less/toast.less'
-import Toast from './toast'
-import Event from './event'
+import '../../less/toast.less';
+import '../../less/note.less';
+import Toast from './toast';
+import Event from './event';
 
 
 function Note(opts){
@@ -10,14 +11,7 @@ function Note(opts){
   this.bindEvent()
 }
 Note.prototype = {
-  colors: [
-    ['#ea9b35','#efb04e'], // headColor, containerColor
-    ['#dd598b','#e672a2'],
-    ['#eee34b','#f2eb67'],
-    ['#c24226','#d15a39'],
-    ['#c1c341','#d0d25c'],
-    ['#3f78c3','#5591d2']
-  ],
+  colors: ['#fff','#E89CA5'],
 
   defaultOpts: {
     id: '',   //Note的 id
@@ -34,8 +28,10 @@ Note.prototype = {
 
   createNote: function () {
     var tpl =  '<div class="note">'
+              + '<div class="box">'
               + '<div class="note-head"><span class="username"></span><span class="delete">&times</span></div>'
               + '<div class="note-ct" contenteditable="true"></div>'
+              + '</div>'
               +'</div>'
     this.$note = $(tpl)
     this.$note.find('.note-ct').text(this.opts.context)
@@ -45,9 +41,8 @@ Note.prototype = {
   },
 
   setStyle: function () {
-    var color = this.colors[Math.floor(Math.random()*6)]
-    this.$note.find('.note-head').css('background-color', color[0])
-    this.$note.find('.note-ct').css('background-color', color[1])
+    this.$note.find('.note-head').css('background-color', this.colors[0])
+    this.$note.find('.note-ct').css('background-color', this.colors[1])
   },
 
   setLayout: function(){
