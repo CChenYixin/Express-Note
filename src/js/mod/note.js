@@ -37,7 +37,10 @@ Note.prototype = {
     this.$note.find('.note-ct').text(this.opts.context)
     this.$note.find('.username').text(this.opts.username)
     this.opts.$ct.append(this.$note)
-    if(!this.id)  this.$note.css('bottom', '10px')  //新增放到右边
+    if(!this.id)  this.$note.css({
+      'bottom':'100px',
+      'left': '100px'
+    })  //新增放到右边
   },
 
   setStyle: function () {

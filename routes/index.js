@@ -11,7 +11,8 @@ router.get('/', function(req, res, next) {
     }
   }else{
     data = {
-      isLogin: false
+      isLogin: false,
+      user: req.session.user
     }
   }
   console.log(data)
